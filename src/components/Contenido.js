@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
@@ -6,8 +6,8 @@ import { useForm } from '../hooks/useForm';
 import { listUsers, userAddAsincrono } from '../actions/actionUsers';
 import { ListUsers } from './ListUsers';
 
-import { DivForm, DivWelcome } from './styles/Contenido.Styled';
-import { Button, Form } from 'react-bootstrap';
+import { DivForm } from './styles/Contenido.Styled';
+import { Button } from 'react-bootstrap';
 
 const Contenido = () => {
 
@@ -42,7 +42,7 @@ const Contenido = () => {
   }
 
   useEffect(() => {
-    dispatch(listUsers())
+    dispatch(listUsers());
   }, [])
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
 import { editUsers } from '../actions/actionUsers';
@@ -8,7 +8,6 @@ import { Form, Modal, ModalBody, Button, ButtonGroup } from 'react-bootstrap';
 const EditarUsuarios = ({ modal, setModal, modalBooleana }) => {
 
     const dispatch = useDispatch();
-    const [show, setShow] = useState(true);
 
     const handleClose = () => setModal(false);
 
@@ -79,3 +78,4 @@ const EditarUsuarios = ({ modal, setModal, modalBooleana }) => {
 }
 
 export default EditarUsuarios
+

@@ -6,10 +6,6 @@ import { Items, Detail, Cantidad } from '../components/styles/CartItem.Styled'
 import { TiDelete } from 'react-icons/ti'
 import { Price, Title } from './styles/Product.Styled';
 
-import { useNavigate, Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { logout } from '../actions/actionLogin'
-
 
 const CartItem = ({ itemData, removeFromCart, adjustQty }) => {
 
@@ -61,3 +57,4 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(null, mapDispatchToProps)(CartItem)
+
