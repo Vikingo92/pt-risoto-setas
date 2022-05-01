@@ -1,6 +1,6 @@
 import { actionTypes } from "../types/types";
 
-// Funciones - acciones
+// Funciones - acciones - Agregar producto.
 export const addToCart = (itemID) => {
     return {
         type: actionTypes.ADD_TO_CART,
@@ -10,6 +10,7 @@ export const addToCart = (itemID) => {
     }
 }
 
+// Eliminar producto.
 export const removeFromCart = (itemID) => {
     return {
         type: actionTypes.REMOVE_FROM_CART,
@@ -19,6 +20,7 @@ export const removeFromCart = (itemID) => {
     }
 }
 
+// Ajustar la cantidad del producto.
 export const adjustQty = (itemID, value) => {
     return {
         type: actionTypes.QUANTITY,
@@ -26,12 +28,5 @@ export const adjustQty = (itemID, value) => {
             id: itemID,
             qty: value
         }
-    }
-}
-
-export const loadCurrentItem = (item) => {
-    return {
-        type: actionTypes.LOAD_CURRENT_ITEM,
-        payload: item
     }
 }

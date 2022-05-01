@@ -28,7 +28,8 @@ const Cart = ({ cart }) => {
 
     const showAlert = () => {
         Swal.fire({
-            title: "Su compra ha sido exitosa",
+            title: "Transacción exitosa",
+            text:"Gracias por su compra.",
             icon: "success",
             confirmButtonText: "OK",
         });
@@ -45,15 +46,16 @@ const Cart = ({ cart }) => {
                 <h3>Orden de compra</h3>
                 <Price>
                     <p>Items: {totalItems} </p>
-                    <p>Subtotal: 2,95 €</p>
+                    <p>Subtotal: {(totalPrice.toFixed(2)) / (1,1)} €</p>
                     <p>Gastos de envio: 7,00 €</p>
-                    <Price>Total ${totalPrice.toFixed(2)} €</Price>
+                    <Price>Total ${((totalPrice.toFixed(2)) / (1,1)) + 7} €</Price>
                 </Price>
                 <Button onClick={showAlert}>
-                    Comprar: ${totalPrice.toFixed(2)} €
+                    Comprar: ${((totalPrice.toFixed(2)) / (1,1)) + 7} €
                 </Button>
             </Content>
         </CartDiv >
+        // iva = 10%
     )
 }
 
@@ -64,3 +66,8 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Cart)
+
+ // iva = 10% / 100 = 0.1
+//  1 + 0.1 = 1,1
+//  Subtotal = totalPrice / 1.1
+// IVA = totalPrice - Subtotal

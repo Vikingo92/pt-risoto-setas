@@ -56,7 +56,6 @@ const initialState = {
         }
     ],
     cart: [],
-    currentItem: null,
 }
 
 const ShoppingReducer = (state = initialState, action) => {
@@ -93,12 +92,6 @@ const ShoppingReducer = (state = initialState, action) => {
                         ? { ...item, qty: + action.payload.qty }
                         : item
                 )
-            }
-
-        case actionTypes.LOAD_CURRENT_ITEM:
-            return {
-                ...state,
-                currentItem: action.payload,
             }
 
         default:

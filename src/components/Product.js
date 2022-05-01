@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addToCart, loadCurrentItem } from '../actions/shoppingActions';
+import { addToCart } from '../actions/shoppingActions';
 
 import { ProductDiv, Details, Title, Description, Price, Add, Options } from './styles/Product.Styled';
 
-const Product = ({ productData, addToCart, loadCurrentItem }) => {
+const Product = ({ productData, addToCart }) => {
     return (
 
         <ProductDiv>
@@ -30,7 +30,6 @@ const Product = ({ productData, addToCart, loadCurrentItem }) => {
 const mapDispatchToProps = dispatch => {
     return {
         addToCart: (id) => dispatch(addToCart(id)),
-        loadCurrentItem: (item) => dispatch(loadCurrentItem(item))
     }
 }
 
